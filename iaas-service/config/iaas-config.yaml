@@ -10,9 +10,9 @@ server:
       port: 53508
 database:
     driverClass: com.mysql.jdbc.Driver
-    user: root
-    password:
-    url: jdbc:mysql://127.0.0.1:3306/ripple_iaas
+    user: dyfodbprd
+    password: dyfodbprd123
+    url: jdbc:mysql://dyfo-db-prod3.czynrz5a64r9.ap-south-1.rds.amazonaws.com:3306/iaas
     initialSize : 2
     minSize: 2
     maxSize: 2
