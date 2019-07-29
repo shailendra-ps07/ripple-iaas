@@ -1,0 +1,259 @@
+{
+	"info": {
+		"_postman_id": "63f77355-4cbd-4c3f-b8ac-bbdc221a1d44",
+		"name": "Ripple VM Provisioning",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"sachin\",\n\t\"email\": \"shailendra@ripple.com\",\n\t\"mobile_no\": \"9886750099\",\n\t\"password\": \"ripple-passw\",\n\t\"is_master\": true\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:53506/ripple-iaas/v1/iaas/user/register",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "53506",
+					"path": [
+						"ripple-iaas",
+						"v1",
+						"iaas",
+						"user",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Virtual Machine",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQ0NDA4MTIsInN1YiI6InNoYWlsZW5kcmFAcmlwcGxlLmNvbSIsImp0aSI6ImFmMDUxNTA5LTc1OWItNDc2YS05MTVhLWY4YzYzNmUwNDA4NiJ9.zC_7xwboHE8Ji_lyg0KDK3hwjdGU5HRePF4J_BfV9FY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"vm1\",\n\t\"operating_system\": \"windows\",\n\t\"ram\": \"ram2\",\n\t\"hard_disk\": \"hd1\",\n\t\"cpu_cores\": \"cc1\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:53506/ripple-iaas/v1/iaas/vm/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "53506",
+					"path": [
+						"ripple-iaas",
+						"v1",
+						"iaas",
+						"vm",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch VM of a user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQ0NDA4MTIsInN1YiI6InNoYWlsZW5kcmFAcmlwcGxlLmNvbSIsImp0aSI6ImFmMDUxNTA5LTc1OWItNDc2YS05MTVhLWY4YzYzNmUwNDA4NiJ9.zC_7xwboHE8Ji_lyg0KDK3hwjdGU5HRePF4J_BfV9FY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://127.0.0.1:53506/ripple-iaas/v1/iaas/vm/fetch",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "53506",
+					"path": [
+						"ripple-iaas",
+						"v1",
+						"iaas",
+						"vm",
+						"fetch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Top n VM of User by Ram",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQ0MjgyMDcsInN1YiI6InNoaXZhbUByaXBwbGUuY29tIiwianRpIjoiZGFmZTlhNDYtOTVjMy00NzAwLTlmNmMtYjBjMzMyMzdmZWQ0In0.btM8saI-nk-sNa8zNfj_aIxyKNWtZAOQa9Ld3nuYxa0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:53506/ripple-iaas/v1/iaas/vm/fetch/3",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "53506",
+					"path": [
+						"ripple-iaas",
+						"v1",
+						"iaas",
+						"vm",
+						"fetch",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQ0MzI5NDgsInN1YiI6ImFAcmlwcGxlLmNvbSIsImp0aSI6ImZiYWJlYjg4LWJiMmItNGFiOC1iZGM2LTI1NjlhMGJmYzlhNyJ9.-suBUMXNgyq6UbXDE_Z0s9u-75pIc-S7nQSHx8uDyC0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:53506/ripple-iaas/v1/iaas/user/remove/akarshan@ripple.com",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "53506",
+					"path": [
+						"ripple-iaas",
+						"v1",
+						"iaas",
+						"user",
+						"remove",
+						"akarshan@ripple.com"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fetch Top n VM by Ram across all users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQ0MjgyMDcsInN1YiI6InNoaXZhbUByaXBwbGUuY29tIiwianRpIjoiZGFmZTlhNDYtOTVjMy00NzAwLTlmNmMtYjBjMzMyMzdmZWQ0In0.btM8saI-nk-sNa8zNfj_aIxyKNWtZAOQa9Ld3nuYxa0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:53506/ripple-iaas/v1/iaas/vm/fetch-all/1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "53506",
+					"path": [
+						"ripple-iaas",
+						"v1",
+						"iaas",
+						"vm",
+						"fetch-all",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
