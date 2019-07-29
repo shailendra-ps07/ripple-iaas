@@ -1,0 +1,7 @@
+com/ripple/iaas/models/UserDTO.class
+com/ripple/iaas/models/response/AuthResponse.class
+com/ripple/iaas/models/VirtualMachineDTO$VirtualMachineDTOBuilder.class
+com/ripple/iaas/models/enums/UserAccountType.class
+com/ripple/iaas/models/UserDTO$UserDTOBuilder.class
+com/ripple/iaas/models/response/AuthResponse$AuthResponseBuilder.class
+com/ripple/iaas/models/VirtualMachineDTO.class

@@ -1,0 +1,29 @@
+server:
+  type: default
+  applicationContextPath: /ripple-iaas
+  adminContextPath: /admin
+  applicationConnectors:
+    - type: http
+      port: 53506
+  adminConnectors:
+    - type: http
+      port: 53508
+database:
+    driverClass: com.mysql.jdbc.Driver
+    user: root
+    password:
+    url: jdbc:mysql://127.0.0.1:3306/ripple_iaas
+    initialSize : 2
+    minSize: 2
+    maxSize: 2
+logging:
+  level: INFO
+  loggers:
+    "io.dropwizard": INFO
+    "org.hibernate.SQL":
+      level: DEBUG
+      additive: false
+      appenders:
+        - type: console
+  appenders:
+    - type: console
