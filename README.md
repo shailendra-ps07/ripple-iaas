@@ -2,7 +2,7 @@
 
 Steps to Run:
   1. mvn clean install
-  2. Configure Application to run with parameter (server , iaas-service/config/iaas-config.yaml
+  2. Configure Application to run with parameter (server , iaas-service/config/iaas-config.yaml)
 
 Notes:
   1. iaas_2019-07-30.sql.gz contains tables with metadata for testing
